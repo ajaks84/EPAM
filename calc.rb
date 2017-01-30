@@ -1,6 +1,6 @@
 def get_int_values
 	arr=Array.new()
- 		until arr.length==2 do x=Integer(gets) rescue false 
+ 		until arr.length==2 do x=Float(gets) rescue false 
 			if x 
 				arr.push(x)
 	    		else puts "I accept integers only! So enter a number"
@@ -52,8 +52,14 @@ else puts "no valid operation detected"
 end
 
 if !sqrt
-	answer = get_int_values.inject(operator)
+	s = get_int_values
+	puts " #{s[0]} #{operator} #{s[1]}"
+	if s[1]==0 and operator == :/
+		puts "You have been trying to divide by zero!"
+	else
+	answer = s.inject(operator).to_i
 	puts "The answer is... #{ answer }"
+	end
 else 
 	puts "Programm has been finished"	
 end
