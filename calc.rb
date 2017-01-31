@@ -1,6 +1,6 @@
 def get_int_values
 	arr=Array.new()
- 		until arr.length==2 do x=Float(gets) rescue false 
+ 		until arr.length==2 do x=Integer(gets) rescue false 
 			if x 
 				arr.push(x)
 	    		else puts "I accept integers only! So enter a number"
@@ -43,15 +43,15 @@ when 'p'
 
 when 'sq'
   puts "Which number would you like to sqrt?"
-  	sqrt = true
+  	way = true
   x = Math.sqrt(gets.chomp.to_i)
   puts "The answer is... #{ x }"
 
-else puts "no valid operation detected"   
-	sqrt = true
+else puts "No valid operation detected"   
+	way = true
 end
 
-if !sqrt
+if !way
 	s = get_int_values
 	puts " #{s[0]} #{operator} #{s[1]}"
 	if s[1]==0 and operator == :/
